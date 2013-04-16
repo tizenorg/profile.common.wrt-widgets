@@ -33,7 +33,6 @@ if [ ! -d %{buildroot}/root/widget_demo ]
 then
 	mkdir -p  %{buildroot}/root/widget_demo
 fi
-cp 
 
 cp *.wgt %{buildroot}/root/widget_demo/
 

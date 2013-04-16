@@ -31,7 +31,7 @@ cp load_widget.sh %{buildroot}/usr/bin/
 
 if [ ! -d %{buildroot}/root/widget_demo ]
 then
-	mkdir %{buildroot}/root/widget_demo
+	mkdir -p  %{buildroot}/root/widget_demo
 fi
 cp 
 

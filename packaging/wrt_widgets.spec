@@ -1,5 +1,5 @@
 Name:       wrt_widgets
-Summary:    wrt_widgets
+Summary:    Wrt_widgets
 Version:    0.1
 Release:    1
 Group:      Framework/system

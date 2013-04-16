@@ -6,7 +6,7 @@ Group:      Framework/system
 License:    Apache License, Version 2.0
 Source0:    %{name}-%{version}.tar.gz
 Requires:  wrt
-Requires:  wrt-common
+Requires:  wrt-commons
 Requires:  wrt-installer 
 Requires:  wrt-plugins-tizen
 Requires:  wrt-security

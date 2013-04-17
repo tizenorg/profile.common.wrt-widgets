@@ -38,5 +38,6 @@ Categories=WRT;Game
 EOC
 done
 
+update-desktop-database
 xdg-icon-resource forceupdate
 

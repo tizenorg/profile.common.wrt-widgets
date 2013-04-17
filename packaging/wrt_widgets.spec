@@ -23,11 +23,8 @@ Description: Wrt_Widget DEMO
 
 %install
 
-chmod a+x install_widgets.sh
-chmod a+x  load_widget.sh
 mkdir -p %{buildroot}/usr/bin/
 cp install_widgets.sh %{buildroot}/usr/bin/
-cp load_widget.sh %{buildroot}/usr/bin/
 
 if [ ! -d %{buildroot}/root/widget_demo ]
 then
@@ -47,17 +44,13 @@ mkdir -p /usr/share/applications_tmp
 mv /usr/share/applications/* /usr/share/applications_tmp/
 ail_initdb
 mv /usr/share/applications_tmp/* /usr/share/applications/
-for d in dbspace home usr; do find /opt/$d -exec chsmack -a _ {} \; ; done;
+for d in dbspace home usr; do find /opt/$d -exec chsmack -a '*' {} \; ; done;
 find  /usr/lib64/ -exec chsmack -a _ {} \;
 
 
-
-
-
-
-echo "Please Reboot and Execute the scripts install_widgets.sh & load_widget.sh in root mode "
+echo "Please Reboot and Execute the script install_widgets.sh as user root"
 
 %files
 /root/widget_demo/*.wgt
 /usr/bin/install_widgets.sh
-/usr/bin/load_widget.sh
+

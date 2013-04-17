@@ -48,6 +48,11 @@ mv /usr/share/applications/* /usr/share/applications_tmp/
 ail_initdb
 mv /usr/share/applications_tmp/* /usr/share/applications/
 for d in dbspace home usr; do find /opt/$d -exec chsmack -a _ {} \; ; done;
+find  /usr/lib64/ -exec chsmack -a _ {} \;
+
+
+
+
 
 
 echo "Please Reboot and Execute the scripts install_widgets.sh & load_widget.sh in root mode "

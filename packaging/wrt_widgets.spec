@@ -42,6 +42,7 @@ wrt_reset_all.sh
 pkg_initdb
 mkdir -p /usr/share/applications_tmp
 mv /usr/share/applications/* /usr/share/applications_tmp/
+mv /usr/share/applications_tmp/*tizen*.desktop /usr/share/applications/
 ail_initdb
 mv /usr/share/applications_tmp/* /usr/share/applications/
 for d in dbspace home usr; do find /opt/$d -exec chsmack -a '*' {} \; ; done;

@@ -12,6 +12,13 @@ Requires:  wrt-plugins-tizen
 Requires:  wrt-security
 Requires:  aul-1-configPC
 Requires:  dbus-configPC
+Requires:  nodejs
+Requires:  web-ui-fw
+Requires:  web-ui-fw-demo-tizen-winsets
+Requires:  web-ui-fw-theme-default
+Requires:  web-ui-fw-theme-tizen-black
+Requires:  web-ui-fw-theme-tizen-white
+Requires:  web-ui-fw-devel
 
 %description
 Description: Wrt_Widget DEMO

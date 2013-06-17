@@ -10,6 +10,8 @@ Requires:  wrt-commons
 Requires:  wrt-installer 
 Requires:  wrt-plugins-tizen
 Requires:  wrt-security
+Requires:  aul-1-configPC
+Requires:  dbus-configPC
 
 %description
 Description: Wrt_Widget DEMO

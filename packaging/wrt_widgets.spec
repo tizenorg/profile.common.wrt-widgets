@@ -49,7 +49,7 @@ ail_initdb
 mv /usr/share/applications_tmp/* /usr/share/applications/
 for d in dbspace home usr; do find /opt/$d -exec chsmack -a '*' {} \; ; done;
 find  /usr/lib64/ -exec chsmack -a _ {} \;
-
+chmod -R a+rw /opt/dbspace/
 
 echo "Please Reboot and Execute the script install_widgets.sh as user root"
 

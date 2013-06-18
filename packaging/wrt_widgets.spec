@@ -38,6 +38,7 @@ cp *.wgt %{buildroot}/root/widget_demo/
 %post
 mkdir -p /opt/usr/apps
 mkdir -p /opt/share/applications
+mkdir -p /opt/share/packages
 rm /opt/dbspace/.wrt*
 wrt_commons_create_clean_db.sh
 wrt_reset_all.sh

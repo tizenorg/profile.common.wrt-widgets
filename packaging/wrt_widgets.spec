@@ -10,7 +10,7 @@ Requires:  wrt-commons
 Requires:  wrt-installer 
 Requires:  wrt-plugins-tizen
 Requires:  wrt-security
-Requires:  aul-1-configPC
+Requires:  daemon-launch-config-pc
 Requires:  dbus-configPC
 Requires:  nodejs
 Requires:  web-ui-fw

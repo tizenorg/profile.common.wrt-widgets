@@ -1,0 +1,26 @@
+* Tue Jun 25 2013 Xavier Roche <xavier.roche@eurogiciel.fr> 1d34779
+- Merge remote-tracking branch 'gitvannes/master'
+- Initial empty repository
+- Enable the WA for icon creation
+- Update dep Name
+- Add new JS Script for TIZEN WGT
+- Add vconf table creation from settings package in post section of spec file
+- Update post section
+- Change rule of dbspace directory
+- Update Requires Dep.
+- ADD BluetoothChat.wgt
+- Fix launch icon issue : two icons creation
+- Fix config.xml issu
+- Add some desktop file in /usr/share/applications to prevent of ail_initdb
+- simplification
+- Merge branch 'master' of ns238759.ovh.net:/home/git/clone/tz.otcshare.org/wrt_widgets
+- renaming and setting execution rights
+- improved version
+- Add usr/lib64/ for unsmack
+- Fix Install Script
+- Fix Requires packages
+- Fix RPMLINT Rules
+- Fix cp command
+- Fix mkdir command
+- First commit
+

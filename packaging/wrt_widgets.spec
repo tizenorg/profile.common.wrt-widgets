@@ -1,5 +1,5 @@
-Name:       wrt_widgets
-Summary:    Wrt_widgets
+Name:       wrt-widgets
+Summary:    Wrt-widgets
 Version:    0.1
 Release:    1
 Group:      Framework/system
@@ -21,7 +21,7 @@ Requires:  web-ui-fw-theme-tizen-white
 Requires:  web-ui-fw-devel
 
 %description
-Description: Wrt_Widget DEMO
+Description: Wrt-Widget DEMO
 
 
 %prep

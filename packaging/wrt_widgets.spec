@@ -11,7 +11,7 @@ Requires:  wrt-installer
 Requires:  wrt-plugins-tizen
 Requires:  wrt-security
 Requires:  daemon-launch-config-pc
-Requires:  dbus-configPC
+Requires:  dbus-config-pc
 Requires:  nodejs
 Requires:  web-ui-fw
 Requires:  web-ui-fw-demo-tizen-winsets

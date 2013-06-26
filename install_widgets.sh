@@ -7,7 +7,7 @@ if [ "$(id -u)" != "0" ]; then
    exit 1
 fi
 
-wgtdir=/root/widget_demo
+wgtdir=/usr/share/widget_demo
 if [ -z "$(ls $wgtdir/*.wgt 2> /dev/null)" ]; then
    echo "$wgtdir doesn't contains any widgets (.wgt)" 1>&2
    exit 1

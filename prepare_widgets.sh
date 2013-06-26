@@ -211,8 +211,12 @@ GOPTION="-g 6514"
     for d in dbspace home usr; do find /opt/$d -exec chsmack -a '*' {} \; ; done;
     find  /usr/lib64/ -exec chsmack -a _ {} \;
 
-    # WA to fix sound issue on gnome after an intall of WRT
+    # WA to fix sound issue on gnome after an intall of WRT #
+    # remove smack rules applied by the rules provided by libdevice-node 
     chsmack -a _ /dev/snd/*
-
+    # remove udev rules  provided by libdevice-node to avoid smack rule on device node 
+    rm /usr/lib/udev/rules.d/95-devices.rules
+    rm /usr/lib/udev/rules.d/51-devices-priv.rules
+    #
     chmod -R a+rw /opt/dbspace/
 

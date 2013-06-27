@@ -4,6 +4,7 @@ Version:    0.1
 Release:    1
 Group:      Web Framework/Web Run Time
 License:    Apache-2.0
+BuildArch:  noarch
 Source0:    %{name}-%{version}.tar.gz
 Requires:   wrt
 Requires:   wrt-commons
@@ -12,13 +13,6 @@ Requires:   wrt-plugins-tizen
 Requires:   wrt-security
 Requires:   daemon-launch-config-pc
 Requires:   dbus-config-pc
-Requires:   nodejs
-Requires:   web-ui-fw
-Requires:   web-ui-fw-demo-tizen-winsets
-Requires:   web-ui-fw-theme-default
-Requires:   web-ui-fw-theme-tizen-black
-Requires:   web-ui-fw-theme-tizen-white
-Requires:   web-ui-fw-devel
 
 %description
 Wrt-widgets prepare a suitable pc oriented environment to install WRT widgets

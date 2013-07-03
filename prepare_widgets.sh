@@ -201,7 +201,7 @@ GOPTION="-g 6514"
     mkdir -p /opt/share/packages
     rm /opt/dbspace/.wrt*
     wrt_commons_create_clean_db.sh
-    wrt_reset_all.sh
+    wrt_reset_db.sh
     pkg_initdb
     mkdir -p /usr/share/applications_tmp
     mv /usr/share/applications/* /usr/share/applications_tmp/

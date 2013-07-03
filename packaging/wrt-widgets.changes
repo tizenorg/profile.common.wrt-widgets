@@ -1,3 +1,8 @@
+* Wed Jul 03 2013 Baptiste DURAND <baptiste.durand@eurogiciel.fr> submit/trunk/20130703.144316@c08d341
+- Clean script
+- Clean up %post section
+- Fix mic crash in build image
+
 * Wed Jul 03 2013 Baptiste DURAND <baptiste.durand@eurogiciel.fr> accepted/trunk/20130627.163920@46976a1
 - Remove obselete chsmack command on device node
 

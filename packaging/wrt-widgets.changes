@@ -1,3 +1,6 @@
+* Wed Jul 03 2013 Baptiste DURAND <baptiste.durand@eurogiciel.fr> accepted/trunk/20130627.163920@46976a1
+- Remove obselete chsmack command on device node
+
 * Thu Jun 27 2013 Baptiste DURAND <baptiste.durand@eurogiciel.fr> accepted/trunk/20130627.075344@5dec520
 - Fix TZPC-3391
 

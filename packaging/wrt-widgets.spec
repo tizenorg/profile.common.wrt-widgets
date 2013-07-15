@@ -13,6 +13,7 @@ Requires:   wrt-plugins-tizen
 Requires:   wrt-security
 Requires:   daemon-launch-config-pc
 Requires:   dbus-config-pc
+Requires:   libprivilege-control-conf
 
 %description
 Wrt-widgets prepare a suitable pc oriented environment to install WRT widgets

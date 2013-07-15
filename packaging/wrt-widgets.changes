@@ -1,3 +1,6 @@
+* Mon Jul 15 2013 Baptiste DURAND <baptiste.durand@eurogiciel.fr> submit/trunk/20130703.154146@112b3e5
+- Add libprivilege-control-conf as Runtime dependency
+
 * Wed Jul 03 2013 Baptiste DURAND <baptiste.durand@eurogiciel.fr> submit/trunk/20130703.144316@c08d341
 - Clean script
 - Clean up %post section

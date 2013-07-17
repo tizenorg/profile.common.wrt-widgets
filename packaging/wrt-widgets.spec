@@ -30,6 +30,12 @@ mkdir -p %{buildroot}/%{_bindir}
 cp install_widgets.sh %{buildroot}/%{_bindir}
 cp prepare_widgets.sh %{buildroot}/%{_bindir}
 
+if [ ! -d %{buildroot}/%{_sysconfdir}/sysconfig ]
+then
+	mkdir -p %{buildroot}/%{_sysconfdir}/sysconfig
+fi
+cp wrt %{buildroot}/%{_sysconfdir}/sysconfig/
+
 if [ ! -d %{buildroot}/%{_datadir}/widget_demo ]
 then
     mkdir -p  %{buildroot}/%{_datadir}/widget_demo
@@ -44,3 +50,4 @@ cp -r *.wgt %{buildroot}/%{_datadir}/widget_demo/
 %{_datadir}/widget_demo/*.wgt
 %attr(755,root,root) %{_bindir}/install_widgets.sh
 %attr(755,root,root) %{_bindir}/prepare_widgets.sh
+%attr(644,root,root) %{_sysconfdir}/sysconfig/wrt

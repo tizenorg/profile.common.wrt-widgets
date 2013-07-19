@@ -35,6 +35,8 @@ then
 	mkdir -p %{buildroot}/%{_sysconfdir}/sysconfig
 fi
 cp wrt %{buildroot}/%{_sysconfdir}/sysconfig/
+cp launchpad %{buildroot}/%{_sysconfdir}/sysconfig/
+
 
 if [ ! -d %{buildroot}/%{_datadir}/widget_demo ]
 then
@@ -51,3 +53,4 @@ cp -r *.wgt %{buildroot}/%{_datadir}/widget_demo/
 %attr(755,root,root) %{_bindir}/install_widgets.sh
 %attr(755,root,root) %{_bindir}/prepare_widgets.sh
 %attr(644,root,root) %{_sysconfdir}/sysconfig/wrt
+%attr(644,root,root) %{_sysconfdir}/sysconfig/launchpad

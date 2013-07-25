@@ -1,3 +1,6 @@
+* Thu Jul 25 2013 Baptiste DURAND <baptiste.durand@eurogiciel.fr> accepted/trunk/20130722.103339@0e7e5fc
+- Remove WA for ISSUE TZPC-3461
+
 * Fri Jul 19 2013 Baptiste DURAND <baptiste.durand@eurogiciel.fr> accepted/trunk/20130717.161818@6bd5cee
 - Add Environment launchpad file
 

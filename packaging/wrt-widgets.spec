@@ -11,8 +11,8 @@ Requires:   wrt-commons
 Requires:   wrt-installer 
 Requires:   wrt-plugins-tizen
 Requires:   wrt-security
-Requires:   daemon-launch-config-pc
-Requires:   dbus-config-pc
+##  Requires:   daemon-launch-config-pc
+##  Requires:   dbus-config-pc
 Requires:   libprivilege-control-conf
 
 %description

@@ -46,7 +46,6 @@ fi
 cp -r *.wgt %{buildroot}/%{_datadir}/widget_demo/
 
 %post
-%{_bindir}/prepare_widgets.sh
 
 %files
 %{_datadir}/widget_demo/*.wgt

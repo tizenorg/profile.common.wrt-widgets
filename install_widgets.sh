@@ -1,11 +1,11 @@
 #!/bin/sh
 
 
-echo "Widget Installation"
-if [ "$(id -u)" != "0" ]; then
-   echo "This script must be run as root" >&2
-   exit 1
-fi
+#echo "Widget Installation"
+#if [ "$(id -u)" != "0" ]; then
+#   echo "This script must be run as root" >&2
+#   exit 1
+#fi
 
 wgtdir=/usr/share/widget_demo
 if [ -z "$(ls $wgtdir/*.wgt 2> /dev/null)" ]; then

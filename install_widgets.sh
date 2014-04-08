@@ -7,7 +7,9 @@
 #   exit 1
 #fi
 
-wgtdir=/usr/share/widget_demo
+source /etc/tizen-platform.conf
+
+wgtdir=${TZ_SYS_SHARE}/widget_demo
 if [ -z "$(ls $wgtdir/*.wgt 2> /dev/null)" ]; then
    echo "$wgtdir doesn't contains any widgets (.wgt)" 1>&2
    exit 1
@@ -23,8 +25,8 @@ do
 	fi
 done
 
-repo=/opt/usr/apps/
-chmod -R a+rw /opt/dbspace/
+repo=${TZ_USER_APP}/
+chmod -R a+rw ${TZ_SYS_DB}/
 
 if [ -x /usr/bin/wrt-launcher ]; then
 	wrt-launcher --list |
@@ -36,13 +38,13 @@ if [ -x /usr/bin/wrt-launcher ]; then
 		if [[ -f $x ]]; then
 			res=$(file -b $x|cut -d , -f 2|tr -d ' '|egrep '[0-9]+x[0-9]+')
 			if [[ -n "$res" ]]; then
-			diric=/usr/share/icons/hicolor/$res/apps
+			diric=${TZ_SYS_SHARE}/icons/hicolor/$res/apps
 			[[ -d $diric ]] || mkdir -p $diric
 			cp $x $diric/$name.png
 			fi
 		fi
 	   done
-		desk=/usr/share/applications/$name.desktop
+		desk=${TZ_SYS_RO_DESKTOP_APP}/$name.desktop
 		cat << EOC > $desk
 	[Desktop Entry]
 	Type=Application

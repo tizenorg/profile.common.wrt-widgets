@@ -3,7 +3,9 @@
 ##### vconf create table from settings package #########################
 # Set vconf values with -g/-u options
 
-rm -rf /opt/data/setting/set_info
+source /etc/tizen-platform.conf
+
+rm -rf ${TZ_SYS_DATA}/setting/set_info
 
 #### Bluetotth API ####################################################
 vconftool set -t string db/menu_widget/regionformat "en_GB.UTF-8"
@@ -14,8 +16,8 @@ vconftool set -t string db/setting/accessibility/font_name "HelveticaNeue"
 #  PC Specific Environment settings
 
 
-mkdir -p /opt/share/packages
-rm -f /opt/dbspace/.wrt*
+mkdir -p ${TZ_SYS_RW_PACKAGES}
+rm -f ${TZ_SYS_DB}/.wrt*
 
 if [ -x /usr/bin/wrt-client ]; then
 	wrt_commons_create_clean_db.sh
@@ -25,5 +27,5 @@ pkg_initdb
 ail_initdb
 
 ##### WA : To allow multi-user launch  ##########
-chmod -R a+rw /opt/dbspace/
+chmod -R a+rw ${TZ_SYS_DB}/
 

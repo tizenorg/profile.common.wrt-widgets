@@ -20,16 +20,9 @@ for wgt in $(grep "^$USER" $wgtdir/install.conf | cut -f2 -d':'); do
 	if [ -x /usr/bin/wrt-installer ]; then
 		wrt-installer -i $wgtdir/$wgt
 	else
-		xwalkctl -i $wgtdir/$wgt
+		xwalkctl -i $wgtdir/$wgt && ln -sf $wgtdir/$(basename $wgt .wgt).desktop ~/.applications/desktop/
 	fi
 done
-
-# setup desktop icons for xwalk
-if [ ! -x /usr/bin/wrt-installer ]; then
-	for id in $(sqlite3 ~/.config/xwalk-service/applications.db 'select id from applications'); do
-		ln -sf /opt/share/applications/xwalk-service.$id.*.desktop ~/.applications/desktop/
-	done
-fi
 
 [[ "$(id -u)" == "0" ]] && chmod -R a+rw ${TZ_SYS_DB}/
 

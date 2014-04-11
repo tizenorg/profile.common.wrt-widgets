@@ -8,6 +8,7 @@ BuildArch:  noarch
 Source0:    %{name}-%{version}.tar.gz
 BuildRequires: pkgconfig(libtzplatform-config)
 Requires:   libtzplatform-config
+Requires:   desktop-skin
 
 %description
 Wrt-widgets prepare a suitable pc oriented environment to install Web apps
@@ -26,6 +27,8 @@ cp prepare_widgets.sh %{buildroot}/%{_bindir}
 
 mkdir -p  %{buildroot}/%{TZ_SYS_SHARE}/widget_demo
 cp -r *.wgt %{buildroot}/%{TZ_SYS_SHARE}/widget_demo/
+cp -r *.png %{buildroot}/%{TZ_SYS_SHARE}/widget_demo/
+cp -r *.desktop %{buildroot}/%{TZ_SYS_SHARE}/widget_demo/
 cp install.conf %{buildroot}/%{TZ_SYS_SHARE}/widget_demo/
 
 %post

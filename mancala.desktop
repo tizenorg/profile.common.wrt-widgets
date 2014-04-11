@@ -1,0 +1,6 @@
+[Desktop Entry]
+Name=Mancala
+Type=Application
+Exec=/usr/bin/xwalk-launcher fidoaebfkacalgdedfodionhmopneipb
+Icon=/opt/share/widget_demo/mancala.png
+

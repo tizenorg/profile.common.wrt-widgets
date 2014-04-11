@@ -1,0 +1,6 @@
+[Desktop Entry]
+Name=Bubblewrap
+Type=Application
+Exec=/usr/bin/xwalk-launcher kmnbdhfbkjkeilhpbooaecgpllbollfn
+Icon=/opt/share/widget_demo/bubblewrap.png
+

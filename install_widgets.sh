@@ -16,7 +16,6 @@ if [ -z "$(ls $wgtdir/*.wgt 2> /dev/null)" ]; then
 fi
 
 for wgt in $(grep "^$USER" $wgtdir/install.conf | cut -f2 -d':'); do
-do 
     echo "installing $wgt"
 	if [ -x /usr/bin/wrt-installer ]; then
 		wrt-installer -i $wgtdir/$wgt

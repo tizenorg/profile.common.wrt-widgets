@@ -26,10 +26,11 @@ cp prepare_widgets.sh %{buildroot}/%{_bindir}
 
 mkdir -p  %{buildroot}/%{TZ_SYS_SHARE}/widget_demo
 cp -r *.wgt %{buildroot}/%{TZ_SYS_SHARE}/widget_demo/
+cp install.conf %{buildroot}/%{TZ_SYS_SHARE}/widget_demo/
 
 %post
 
 %files
-%{TZ_SYS_SHARE}/widget_demo/*.wgt
+%{TZ_SYS_SHARE}/widget_demo/*
 %attr(755,root,root) %{_bindir}/install_widgets.sh
 %attr(755,root,root) %{_bindir}/prepare_widgets.sh

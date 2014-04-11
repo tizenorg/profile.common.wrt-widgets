@@ -6,6 +6,8 @@ Group:      Web Framework/Web Run Time
 License:    Apache-2.0
 BuildArch:  noarch
 Source0:    %{name}-%{version}.tar.gz
+BuildRequires: pkgconfig(libtzplatform-config)
+Requires:   libtzplatform-config
 
 %description
 Wrt-widgets prepare a suitable pc oriented environment to install Web apps
@@ -22,16 +24,12 @@ mkdir -p %{buildroot}/%{_bindir}
 cp install_widgets.sh %{buildroot}/%{_bindir}
 cp prepare_widgets.sh %{buildroot}/%{_bindir}
 
-if [ ! -d %{buildroot}/%{_datadir}/widget_demo ]
-then
-    mkdir -p  %{buildroot}/%{_datadir}/widget_demo
-fi
-
-cp -r *.wgt %{buildroot}/%{_datadir}/widget_demo/
+mkdir -p  %{buildroot}/%{TZ_SYS_SHARE}/widget_demo
+cp -r *.wgt %{buildroot}/%{TZ_SYS_SHARE}/widget_demo/
 
 %post
 
 %files
-%{_datadir}/widget_demo/*.wgt
+%{TZ_SYS_SHARE}/widget_demo/*.wgt
 %attr(755,root,root) %{_bindir}/install_widgets.sh
 %attr(755,root,root) %{_bindir}/prepare_widgets.sh

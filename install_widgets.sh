@@ -25,10 +25,11 @@ do
 	fi
 done
 
-repo=${TZ_USER_APP}/
-chmod -R a+rw ${TZ_SYS_DB}/
+[[ "$(id -u)" == "0" ]] && chmod -R a+rw ${TZ_SYS_DB}/
 
 if [ -x /usr/bin/wrt-launcher ]; then
+	repo=${TZ_USER_APP}/
+
 	wrt-launcher --list |
 	awk 'NR>2{print $2, $5, $6}' |
 	while read name packid appid

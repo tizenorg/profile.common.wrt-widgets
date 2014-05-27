@@ -20,7 +20,7 @@ for wgt in $(grep "^$USER" $wgtdir/install.conf | cut -f2 -d':'); do
 	if [ -x /usr/bin/wrt-installer ]; then
 		wrt-installer -i $wgtdir/$wgt
 	else
-		xwalkctl -i $wgtdir/$wgt && ln -sf $wgtdir/$(basename $wgt .wgt).desktop ~/.applications/desktop/
+		xwalkctl -i $wgtdir/$wgt
 	fi
 done
 

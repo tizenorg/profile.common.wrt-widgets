@@ -1,62 +1,48 @@
 #!/bin/sh
 
+. /etc/tizen-platform.conf
 
-#echo "Widget Installation"
-#if [ "$(id -u)" != "0" ]; then
-#   echo "This script must be run as root" >&2
-#   exit 1
-#fi
+function info() {
+	local ts=$(date +%Y%m%d.%H%M%S)
+	echo $ts "$@" >&2
+}
 
-source /etc/tizen-platform.conf
+function do_install() {
+	info "------------- wrt_widgets install start --------------"
 
-wgtdir=${TZ_SYS_SHARE}/widget_demo
-if [ -z "$(ls $wgtdir/*.wgt 2> /dev/null)" ]; then
-   echo "$wgtdir doesn't contains any widgets (.wgt)" 1>&2
-   exit 1
-fi
+	local wgtdir=${TZ_SYS_SHARE}/widget_demo
+	if [ -n "$(ls $wgtdir/*.wgt 2> /dev/null)" ]; then
+		local nbinstall=0
+		for wgt in $(grep "^$USER" $wgtdir/install.conf | cut -f2 -d':'); do
+			info "installing $wgt" 
+			local try=1
+			local ok=0
+			while [ $try -le 3 ]; do
+				xwalkctl -i $wgtdir/$wgt && { ok=1; break; }
+				try=$((try+1))
+				sleep 3
+			done
+			[ $ok -eq 1 ] && {
+				info "$wgt installed successfully" 
+				nbinstall=$((nbinstall+1))
+			} || info "failed to install $wgt" 
+		done
 
-for wgt in $(grep "^$USER" $wgtdir/install.conf | cut -f2 -d':'); do
-    echo "installing $wgt"
-	if [ -x /usr/bin/wrt-installer ]; then
-		wrt-installer -i $wgtdir/$wgt
-	else
-		xwalkctl -i $wgtdir/$wgt
-	fi
-done
-
-[[ "$(id -u)" == "0" ]] && chmod -R a+rw ${TZ_SYS_DB}/
-
-if [ -x /usr/bin/wrt-launcher ]; then
-	repo=${TZ_USER_APP}/
-
-	wrt-launcher --list |
-	awk 'NR>2{print $2, $5, $6}' |
-	while read name packid appid
-	do
-		bin=$repo/$packid/bin/$appid
-		for x in $repo/$packid/res/wgt/*[iI][cC][oO][nN]*; do
-		if [[ -f $x ]]; then
-			res=$(file -b $x|cut -d , -f 2|tr -d ' '|egrep '[0-9]+x[0-9]+')
-			if [[ -n "$res" ]]; then
-			diric=${TZ_SYS_SHARE}/icons/hicolor/$res/apps
-			[[ -d $diric ]] || mkdir -p $diric
-			cp $x $diric/$name.png
-			fi
+		# signal tz-launcher that new apps were installed
+		info "$nbinstall applications installed" 
+		if [ $nbinstall -gt 0 ]; then
+			info "sending restart signal to tz-launcher"
+			pkill -U $UID -USR1 tz-launcher
 		fi
-	   done
-		desk=${TZ_SYS_RO_DESKTOP_APP}/$name.desktop
-		cat << EOC > $desk
-	[Desktop Entry]
-	Type=Application
-	Name=$name
-	Exec=$bin
-	Icon=$name
-	Terminal=false
-	Categories=WRT;Game
-EOC
-	done
-fi
+	else
+	   info "$wgtdir doesn't contains any widgets (.wgt)" 
+	fi
 
-#update-desktop-database
-#xdg-icon-resource forceupdate
+	info "------------- wrt_widgets install end --------------"
+}
+
+do_install >>~/.applications/install.log 2>&1 </dev/null &
+
+# never fail
+exit 0
 

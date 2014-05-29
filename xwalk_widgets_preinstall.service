@@ -1,0 +1,13 @@
+[Unit]
+Description=Installation of pre-installed widgets
+After=dbus.service
+ConditionPathExists=!%h/.config/xwalk-service/applications.db
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/install_widgets.sh
+
+[Install]
+WantedBy=default.target
+EOF
+

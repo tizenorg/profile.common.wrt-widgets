@@ -15,14 +15,9 @@ vconftool set -t string db/setting/accessibility/font_name "HelveticaNeue"
 ########################################################################
 #  PC Specific Environment settings
 
-
 mkdir -p ${TZ_SYS_RW_PACKAGES}
 rm -f ${TZ_SYS_DB}/.wrt*
 
-if [ -x /usr/bin/wrt-client ]; then
-	wrt_commons_create_clean_db.sh
-	wrt_reset_db.sh
-fi
 pkg_initdb
 ail_initdb
 

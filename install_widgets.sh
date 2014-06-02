@@ -41,7 +41,9 @@ function do_install() {
 	info "------------- wrt_widgets install end --------------"
 }
 
-do_install >>~/.applications/install.log 2>&1 </dev/null &
+do_install >>~/.applications/install.log 2>&1 
+
+touch ~/.applications/install_done
 
 # never fail
 exit 0

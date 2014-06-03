@@ -16,10 +16,6 @@ vconftool set -t string db/setting/accessibility/font_name "HelveticaNeue"
 #  PC Specific Environment settings
 
 mkdir -p ${TZ_SYS_RW_PACKAGES}
-rm -f ${TZ_SYS_DB}/.wrt*
-
-pkg_initdb
-ail_initdb
 
 ##### WA : To allow multi-user launch  ##########
 chmod -R a+rw ${TZ_SYS_DB}/

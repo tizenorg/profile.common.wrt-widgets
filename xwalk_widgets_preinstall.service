@@ -1,6 +1,5 @@
 [Unit]
 Description=Installation of pre-installed widgets
-After=xwalk.service
 ConditionPathExists=!%h/.applications/install_done
 
 [Service]

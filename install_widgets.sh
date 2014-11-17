@@ -18,7 +18,7 @@ function do_install() {
 			local try=1
 			local ok=0
 			while [ $try -le 3 ]; do
-				xwalkctl -i $wgtdir/$wgt && { ok=1; break; }
+				pkgcmd -i -q -t wgt -p $wgtdir/$wgt && { ok=1; break; }
 				try=$((try+1))
 				sleep 3
 			done

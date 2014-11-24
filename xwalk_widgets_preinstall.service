@@ -3,7 +3,7 @@ Description=Installation of pre-installed widgets
 ConditionPathExists=!%h/.applications/install_done
 
 [Service]
-Type=oneshot
+Type=idle
 ExecStart=/usr/bin/install_widgets.sh
 
 [Install]

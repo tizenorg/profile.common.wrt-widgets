@@ -32,7 +32,7 @@ function do_install() {
 		info "$nbinstall applications installed" 
 		if [ $nbinstall -gt 0 ]; then
 			info "sending restart signal to tz-launcher"
-			pkill -U $UID -USR1 tz-launcher
+			pkill -USR1 -U $UID tz-launcher
 		fi
 	else
 	   info "$wgtdir doesn't contains any widgets (.wgt)" 

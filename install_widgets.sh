@@ -18,9 +18,9 @@ function do_install() {
 			local try=1
 			local ok=0
 			while [ $try -le 3 ]; do
-				pkgcmd -i -q -t wgt -p $wgtdir/$wgt && { ok=1; break; }
+				flock -w 30 -e /tmp/pkgcmd_lock pkgcmd -i -q -t wgt -p $wgtdir/$wgt && { ok=1; break; }
 				try=$((try+1))
-				sleep 3
+				sleep 1
 			done
 			[ $ok -eq 1 ] && {
 				info "$wgt installed successfully" 

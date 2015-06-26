@@ -25,7 +25,6 @@ cp %{SOURCE1001} .
 
 mkdir -p %{buildroot}/%{_bindir}
 cp install_widgets.sh %{buildroot}/%{_bindir}
-cp prepare_widgets.sh %{buildroot}/%{_bindir}
 
 mkdir -p  %{buildroot}/%{TZ_SYS_SHARE}/widget_demo
 cp -r apps/*.wgt %{buildroot}/%{TZ_SYS_SHARE}/widget_demo/
@@ -50,6 +49,5 @@ rm -f %{_unitdir_user}/default.target.wants/xwalk_widgets_preinstall.service
 %defattr(-,root,root)
 %{TZ_SYS_SHARE}/widget_demo/*
 %attr(755,root,root) %{_bindir}/install_widgets.sh
-%attr(755,root,root) %{_bindir}/prepare_widgets.sh
 %{_unitdir_user}/xwalk_widgets_preinstall.service
 

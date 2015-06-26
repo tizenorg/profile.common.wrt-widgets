@@ -35,7 +35,9 @@ function do_install() {
 			pkill -USR1 -U $UID tz-launcher
 		fi
 	else
-	   info "$wgtdir doesn't contains any widgets (.wgt)" 
+		info "$wgtdir hasn't installed widget (.wgt), init the bases..."
+		pkgcmd -l
+		info "init done"
 	fi
 
 	info "------------- wrt_widgets install end --------------"
